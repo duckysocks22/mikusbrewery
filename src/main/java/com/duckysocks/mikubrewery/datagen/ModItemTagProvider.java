@@ -1,5 +1,7 @@
 package com.duckysocks.mikubrewery.datagen;
 
+import com.duckysocks.mikubrewery.item.ModItems;
+import com.duckysocks.mikubrewery.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -16,5 +18,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         //getOrCreateTagBuilder(ModTags.Items.EXAMPLE1)
         //          .add(ModItems.EXAMPLE_ITEM1)
         //          .add(ModItems.EXAMPLE_ITEM2);
+
+        getOrCreateTagBuilder(ModTags.Items.MILLABLE_ITEMS)
+                .add(ModItems.COFFEE_BEANS);
     }
 }

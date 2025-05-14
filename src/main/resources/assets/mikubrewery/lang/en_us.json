@@ -1,3 +1,11 @@
 {
+  "item.mikubrewery.wine": "Wine",
+  "item.mikubrewery.coffee": "Coffee",
 
+  "item.mikubrewery.coffee_beans": "Coffee Beans",
+  "item.mikubrewery.coffee_grounds": "Coffee Grounds",
+
+  "block.mikubrewery.mill_station": "Mill Station",
+
+  "itemgroup.mikusbrewery.mikus_brewery_items": "Miku's Brewery Items"
 }
