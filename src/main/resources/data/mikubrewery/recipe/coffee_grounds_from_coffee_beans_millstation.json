@@ -1,0 +1,10 @@
+{
+  "type": "mikubrewery:mill_station",
+  "ingredient": {
+    "item": "mikubrewery:coffee_beans"
+  },
+  "result": {
+    "count": 2,
+    "id": "mikubrewery:coffee_grounds"
+  }
+}
