@@ -1,15 +1,12 @@
 package com.duckysocks.mikubrewery.block;
 
 import com.duckysocks.mikubrewery.MikusBrewery;
-import com.duckysocks.mikubrewery.block.custom.stations.MillStation;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
+import com.duckysocks.mikubrewery.block.custom.stations.MillStationBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -23,7 +20,7 @@ public class ModBlocks {
     //               .requiresTool().sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
     public static final Block MILL_STATION = registerBlock("mill_station",
-            new MillStation(AbstractBlock.Settings.create().strength(2f).nonOpaque()
+            new MillStationBlock(AbstractBlock.Settings.create().strength(2f).nonOpaque()
                     .requiresTool().sounds(BlockSoundGroup.WOOD)));
 
 

@@ -20,6 +20,9 @@ public class ModItems {
     public static final Item COFFEE_BEANS = registerItem("coffee_beans", new Item(new Item.Settings()));
     public static final Item COFFEE_GROUNDS = registerItem("coffee_grounds", new Item(new Item.Settings()));
 
+    public static final Item TEA_LEAVES = registerItem("tea_leaves", new Item(new Item.Settings()));
+    public static final Item MATCHA = registerItem("matcha", new Item(new Item.Settings()));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(MikusBrewery.MOD_ID, name), item);
     }
@@ -28,7 +31,11 @@ public class ModItems {
         MikusBrewery.LOGGER.info("Registering Mod Items for " + MikusBrewery.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(fabricItemGroupEntries -> {
-            //entries.add(EXAMPLE_ITEM);
+            fabricItemGroupEntries.add(ModItems.COFFEE_BEANS);
+            fabricItemGroupEntries.add(ModItems.COFFEE_GROUNDS);
+
+            fabricItemGroupEntries.add(ModItems.TEA_LEAVES);
+            fabricItemGroupEntries.add(ModItems.MATCHA);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(fabricItemGroupEntries -> {

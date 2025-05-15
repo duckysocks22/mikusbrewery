@@ -1,6 +1,6 @@
 package com.duckysocks.mikubrewery.block.entity.renderer;
 
-import com.duckysocks.mikubrewery.block.entity.custom.stations.MillStationEntity;
+import com.duckysocks.mikubrewery.block.entity.custom.stations.MillStationBlockEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.render.OverlayTexture;
@@ -16,13 +16,13 @@ import net.minecraft.util.math.RotationAxis;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 
-public class MillStationEntityRenderer implements BlockEntityRenderer<MillStationEntity> {
+public class MillStationEntityRenderer implements BlockEntityRenderer<MillStationBlockEntity> {
     public MillStationEntityRenderer(BlockEntityRendererFactory.Context context) {
 
     }
 
     @Override
-    public void render(MillStationEntity entity, float tickDelta, MatrixStack matrices,
+    public void render(MillStationBlockEntity entity, float tickDelta, MatrixStack matrices,
                        VertexConsumerProvider vertexConsumers, int light, int overlay) {
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
         ItemStack stack = entity.getStack(0);
