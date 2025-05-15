@@ -17,7 +17,6 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.WINE))
                     .displayName(Text.translatable("itemgroup.mikusbrewery.mikus_brewery_items"))
                     .entries((displayContext, entries) -> {
-                        entries.add(ModItems.WINE);
                         entries.add(ModBlocks.MILL_STATION);
 
                         entries.add(ModItems.COFFEE_BEANS);
@@ -26,6 +25,9 @@ public class ModItemGroups {
 
                         entries.add(ModItems.TEA_LEAVES);
                         entries.add(ModItems.MATCHA);
+                        entries.add(ModItems.TEA);
+
+                        entries.add(ModItems.WINE);
 
                     }).build());
 

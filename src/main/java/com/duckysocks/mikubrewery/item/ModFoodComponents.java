@@ -19,4 +19,10 @@ public class ModFoodComponents {
             .statusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 200), 0.5f)
             .alwaysEdible()
             .build();
+
+    public static final FoodComponent TEA = new FoodComponent.Builder()
+            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 600), 1.0f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 1200), 1.0f)
+            .alwaysEdible()
+            .build();
 }
