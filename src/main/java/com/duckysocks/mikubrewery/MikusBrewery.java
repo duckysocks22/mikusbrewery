@@ -2,16 +2,14 @@ package com.duckysocks.mikubrewery;
 
 import com.duckysocks.mikubrewery.block.ModBlocks;
 import com.duckysocks.mikubrewery.block.entity.ModBlockEntities;
-import com.duckysocks.mikubrewery.block.entity.renderer.MillStationEntityRenderer;
+import com.duckysocks.mikubrewery.block.entity.renderer.DryingStationBlockEntityRenderer;
 import com.duckysocks.mikubrewery.item.ModItemGroups;
 import com.duckysocks.mikubrewery.item.ModItems;
 import com.duckysocks.mikubrewery.recipe.ModRecipes;
 import com.duckysocks.mikubrewery.screen.ModScreenHandlers;
-import com.duckysocks.mikubrewery.screen.custom.station.MillStationScreen;
 import com.duckysocks.mikubrewery.sound.ModSounds;
 import net.fabricmc.api.ModInitializer;
 
-import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,5 +31,7 @@ public class MikusBrewery implements ModInitializer {
 		ModScreenHandlers.registerScreenHandlers();
 
 		ModRecipes.registerRecipes();
+
+		BlockEntityRendererFactories.register(ModBlockEntities.DRYING_STATION_BE, DryingStationBlockEntityRenderer::new);
 	}
 }

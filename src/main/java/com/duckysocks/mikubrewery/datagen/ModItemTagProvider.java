@@ -21,6 +21,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ModTags.Items.MILLABLE_ITEMS)
                 .add(ModItems.COFFEE_BEANS)
+                .add(ModItems.DRIED_TEA_LEAVES);
+
+        getOrCreateTagBuilder(ModTags.Items.DRYABLE_ITEMS)
                 .add(ModItems.TEA_LEAVES);
     }
 }

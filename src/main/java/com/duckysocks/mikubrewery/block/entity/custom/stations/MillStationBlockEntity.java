@@ -24,9 +24,7 @@ import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -54,7 +52,7 @@ public class MillStationBlockEntity extends BlockEntity implements ExtendedScree
     private int progress = 0;
     private int maxProgress = 72;
     private boolean soundPlaying = false;
-    private PositionedSoundInstance machineSound = PositionedSoundInstance.master(ModSounds.MILL_STATION_RUN, 1.0f);;
+    private final PositionedSoundInstance machineSound = PositionedSoundInstance.master(ModSounds.MILL_STATION_RUN, 1.0f);;
 
     public MillStationBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.MILL_STATION_BE, pos, state);

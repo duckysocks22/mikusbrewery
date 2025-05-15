@@ -1,6 +1,7 @@
 package com.duckysocks.mikubrewery.recipe;
 
 import com.duckysocks.mikubrewery.MikusBrewery;
+import com.duckysocks.mikubrewery.recipe.stations.drying_station.DryingStationRecipe;
 import com.duckysocks.mikubrewery.recipe.stations.mill_station.MillStationRecipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
@@ -18,6 +19,17 @@ public class ModRecipes {
                 @Override
                 public String toString() {
                     return "mill_station";
+                }});
+
+    public static final RecipeSerializer<DryingStationRecipe> DRYING_STATION_SERIALIZER = Registry.register(
+            Registries.RECIPE_SERIALIZER, Identifier.of(MikusBrewery.MOD_ID, "drying_station"),
+                    new DryingStationRecipe.Serializer());
+
+    public static final RecipeType<DryingStationRecipe> DRYING_STATION_TYPE = Registry.register(
+            Registries.RECIPE_TYPE, Identifier.of(MikusBrewery.MOD_ID, "drying_station"), new RecipeType<DryingStationRecipe>() {
+                @Override
+                public String toString() {
+                    return "drying_station";
                 }});
 
     public static void registerRecipes() {

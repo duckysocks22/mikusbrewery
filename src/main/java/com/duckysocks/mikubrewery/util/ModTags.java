@@ -17,7 +17,7 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> MILLABLE_ITEMS = createTag("millable_items");
-
+        public static final TagKey<Item> DRYABLE_ITEMS = createTag("dryable_items");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(MikusBrewery.MOD_ID, name));

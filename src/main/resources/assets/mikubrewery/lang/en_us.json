@@ -6,10 +6,12 @@
   "item.mikubrewery.coffee": "Coffee",
 
   "item.mikubrewery.tea_leaves": "Tea Leaves",
+  "item.mikubrewery.dried_tea_leaves": "Dried Tea Leaves",
   "item.mikubrewery.matcha": "Matcha",
   "item.mikubrewery.tea": "Tea",
 
   "block.mikubrewery.mill_station": "Mill Station",
+  "block.mikubrewery.drying_station": "Drying Station",
 
   "itemgroup.mikusbrewery.mikus_brewery_items": "Miku's Brewery Items"
 }

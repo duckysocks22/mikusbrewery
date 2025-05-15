@@ -18,12 +18,14 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.mikusbrewery.mikus_brewery_items"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.MILL_STATION);
+                        entries.add(ModBlocks.DRYING_STATION);
 
                         entries.add(ModItems.COFFEE_BEANS);
                         entries.add(ModItems.COFFEE_GROUNDS);
                         entries.add(ModItems.COFFEE);
 
                         entries.add(ModItems.TEA_LEAVES);
+                        entries.add(ModItems.DRIED_TEA_LEAVES);
                         entries.add(ModItems.MATCHA);
                         entries.add(ModItems.TEA);
 

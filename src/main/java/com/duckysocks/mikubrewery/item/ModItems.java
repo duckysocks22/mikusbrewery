@@ -22,6 +22,7 @@ public class ModItems {
     public static final Item COFFEE = registerItem("coffee", new Coffee(new Item.Settings().food(ModFoodComponents.COFFEE)));
 
     public static final Item TEA_LEAVES = registerItem("tea_leaves", new Item(new Item.Settings()));
+    public static final Item DRIED_TEA_LEAVES = registerItem("dried_tea_leaves", new Item(new Item.Settings()));
     public static final Item MATCHA = registerItem("matcha", new Item(new Item.Settings()));
     public static final Item TEA = registerItem("tea", new Tea(new Item.Settings().food(ModFoodComponents.TEA)));
 
@@ -37,6 +38,7 @@ public class ModItems {
             fabricItemGroupEntries.add(ModItems.COFFEE_GROUNDS);
 
             fabricItemGroupEntries.add(ModItems.TEA_LEAVES);
+            fabricItemGroupEntries.add(ModItems.DRIED_TEA_LEAVES);
             fabricItemGroupEntries.add(ModItems.MATCHA);
         });
 

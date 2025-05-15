@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Model;
 import net.minecraft.data.client.Models;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -18,6 +17,7 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         //blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.EXAMPLE_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MILL_STATION);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DRYING_STATION);
     }
 
     @Override
@@ -30,6 +30,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.COFFEE, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.TEA_LEAVES, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DRIED_TEA_LEAVES, Models.GENERATED);
         itemModelGenerator.register(ModItems.MATCHA, Models.GENERATED);
         itemModelGenerator.register(ModItems.TEA, Models.GENERATED);
     }

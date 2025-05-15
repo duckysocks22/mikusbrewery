@@ -1,0 +1,10 @@
+{
+  "type": "mikubrewery:mill_station",
+  "ingredient": {
+    "item": "mikubrewery:dried_tea_leaves"
+  },
+  "result": {
+    "count": 1,
+    "id": "mikubrewery:matcha"
+  }
+}
