@@ -1,5 +1,6 @@
-package com.duckysocks.mikubrewery.recipe;
+package com.duckysocks.mikubrewery.recipe.stations.mill_station;
 
+import com.duckysocks.mikubrewery.recipe.ModRecipes;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.item.ItemStack;

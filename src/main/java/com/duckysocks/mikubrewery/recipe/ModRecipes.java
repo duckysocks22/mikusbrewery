@@ -1,6 +1,7 @@
 package com.duckysocks.mikubrewery.recipe;
 
 import com.duckysocks.mikubrewery.MikusBrewery;
+import com.duckysocks.mikubrewery.recipe.stations.mill_station.MillStationRecipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.Registries;

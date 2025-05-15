@@ -1,4 +1,4 @@
-package com.duckysocks.mikubrewery.recipe;
+package com.duckysocks.mikubrewery.recipe.stations.mill_station;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.input.RecipeInput;

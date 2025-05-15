@@ -8,6 +8,7 @@ import com.duckysocks.mikubrewery.item.ModItems;
 import com.duckysocks.mikubrewery.recipe.ModRecipes;
 import com.duckysocks.mikubrewery.screen.ModScreenHandlers;
 import com.duckysocks.mikubrewery.screen.custom.station.MillStationScreen;
+import com.duckysocks.mikubrewery.sound.ModSounds;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
@@ -25,6 +26,8 @@ public class MikusBrewery implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
+
+		ModSounds.registerSounds();
 
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerScreenHandlers();

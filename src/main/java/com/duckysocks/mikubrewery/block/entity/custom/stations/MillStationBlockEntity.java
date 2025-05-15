@@ -3,12 +3,15 @@ package com.duckysocks.mikubrewery.block.entity.custom.stations;
 import com.duckysocks.mikubrewery.block.entity.ModBlockEntities;
 import com.duckysocks.mikubrewery.block.entity.custom.ImplementedInventory;
 import com.duckysocks.mikubrewery.recipe.ModRecipes;
-import com.duckysocks.mikubrewery.recipe.MillStationRecipe;
-import com.duckysocks.mikubrewery.recipe.MillStationRecipeInput;
+import com.duckysocks.mikubrewery.recipe.stations.mill_station.MillStationRecipe;
+import com.duckysocks.mikubrewery.recipe.stations.mill_station.MillStationRecipeInput;
 import com.duckysocks.mikubrewery.screen.custom.station.MillStationScreenHandler;
+import com.duckysocks.mikubrewery.sound.ModSounds;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -21,7 +24,9 @@ import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -48,6 +53,8 @@ public class MillStationBlockEntity extends BlockEntity implements ExtendedScree
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
     private int maxProgress = 72;
+    private boolean soundPlaying = false;
+    private PositionedSoundInstance machineSound = PositionedSoundInstance.master(ModSounds.MILL_STATION_RUN, 1.0f);;
 
     public MillStationBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.MILL_STATION_BE, pos, state);
@@ -117,6 +124,7 @@ public class MillStationBlockEntity extends BlockEntity implements ExtendedScree
 
     public void tick(World world, BlockPos pos, BlockState state) {
         if(hasRecipe()) {
+            playCraftingSound();
             increaseCraftingProgress();
             markDirty(world, pos, state);
 
@@ -126,12 +134,25 @@ public class MillStationBlockEntity extends BlockEntity implements ExtendedScree
             }
         } else {
             resetProgress();
+            stopCraftingSound();
         }
+    }
+
+    private void playCraftingSound() {
+        if(!soundPlaying) {
+            MinecraftClient.getInstance().getSoundManager().play(machineSound);
+            this.soundPlaying = true;
+        }
+    }
+
+    private void stopCraftingSound() {
+        MinecraftClient.getInstance().getSoundManager().stop(machineSound);
     }
 
     private void resetProgress() {
         this.progress = 0;
         this.maxProgress = 64;
+        this.soundPlaying = false;
     }
 
     private void craftItem() {
@@ -141,6 +162,7 @@ public class MillStationBlockEntity extends BlockEntity implements ExtendedScree
         this.removeStack(INPUT_SLOT, 1);
         this.setStack(OUTPUT_SLOT, new ItemStack(output.getItem(),
                 this.getStack(OUTPUT_SLOT).getCount() + output.getCount()));
+
     }
 
 
