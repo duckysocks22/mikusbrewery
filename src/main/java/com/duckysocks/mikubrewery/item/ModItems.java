@@ -2,6 +2,7 @@ package com.duckysocks.mikubrewery.item;
 
 import com.duckysocks.mikubrewery.MikusBrewery;
 import com.duckysocks.mikubrewery.item.custom.drinks.Coffee;
+import com.duckysocks.mikubrewery.item.custom.drinks.MegaCoffee;
 import com.duckysocks.mikubrewery.item.custom.drinks.Tea;
 import com.duckysocks.mikubrewery.item.custom.drinks.Wine;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -20,6 +21,7 @@ public class ModItems {
     public static final Item COFFEE_BEANS = registerItem("coffee_beans", new Item(new Item.Settings()));
     public static final Item COFFEE_GROUNDS = registerItem("coffee_grounds", new Item(new Item.Settings()));
     public static final Item COFFEE = registerItem("coffee", new Coffee(new Item.Settings().food(ModFoodComponents.COFFEE)));
+    public static final Item MEGA_COFFEE = registerItem("mega_coffee", new MegaCoffee(new Item.Settings().food(ModFoodComponents.MEGA_COFFEE)));
 
     public static final Item TEA_LEAVES = registerItem("tea_leaves", new Item(new Item.Settings()));
     public static final Item DRIED_TEA_LEAVES = registerItem("dried_tea_leaves", new Item(new Item.Settings()));

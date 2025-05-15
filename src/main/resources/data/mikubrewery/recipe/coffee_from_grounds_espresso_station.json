@@ -1,0 +1,10 @@
+{
+  "type": "mikubrewery:espresso_station",
+  "ingredient": {
+    "item": "mikubrewery:coffee_grounds"
+  },
+  "result": {
+    "count": 1,
+    "id": "mikubrewery:coffee"
+  }
+}

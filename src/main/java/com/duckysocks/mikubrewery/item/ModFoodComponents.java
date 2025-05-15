@@ -25,4 +25,9 @@ public class ModFoodComponents {
             .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 1200), 1.0f)
             .alwaysEdible()
             .build();
+
+    public static final FoodComponent MEGA_COFFEE = new FoodComponent.Builder()
+            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 3000, 100), 1.0f)
+            .alwaysEdible()
+            .build();
 }

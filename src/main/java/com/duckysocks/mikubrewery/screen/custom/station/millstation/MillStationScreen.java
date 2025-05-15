@@ -1,4 +1,4 @@
-package com.duckysocks.mikubrewery.screen.custom.station;
+package com.duckysocks.mikubrewery.screen.custom.station.millstation;
 
 import com.duckysocks.mikubrewery.MikusBrewery;
 import com.mojang.blaze3d.systems.RenderSystem;

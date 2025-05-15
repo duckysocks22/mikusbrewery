@@ -18,6 +18,7 @@ public class ModModelProvider extends FabricModelProvider {
         //blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.EXAMPLE_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MILL_STATION);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DRYING_STATION);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ESPRESSO_STATION);
     }
 
     @Override
@@ -28,6 +29,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.COFFEE_BEANS, Models.GENERATED);
         itemModelGenerator.register(ModItems.COFFEE_GROUNDS, Models.GENERATED);
         itemModelGenerator.register(ModItems.COFFEE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MEGA_COFFEE, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.TEA_LEAVES, Models.GENERATED);
         itemModelGenerator.register(ModItems.DRIED_TEA_LEAVES, Models.GENERATED);

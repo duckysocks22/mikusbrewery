@@ -1,4 +1,4 @@
-package com.duckysocks.mikubrewery.screen.custom.station;
+package com.duckysocks.mikubrewery.screen.custom.station.millstation;
 
 import com.duckysocks.mikubrewery.block.entity.custom.stations.MillStationBlockEntity;
 import com.duckysocks.mikubrewery.screen.ModScreenHandlers;

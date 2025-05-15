@@ -19,6 +19,7 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.MILL_STATION);
                         entries.add(ModBlocks.DRYING_STATION);
+                        entries.add(ModBlocks.ESPRESSO_STATION);
 
                         entries.add(ModItems.COFFEE_BEANS);
                         entries.add(ModItems.COFFEE_GROUNDS);

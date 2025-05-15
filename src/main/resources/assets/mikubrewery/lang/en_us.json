@@ -12,6 +12,9 @@
 
   "block.mikubrewery.mill_station": "Mill Station",
   "block.mikubrewery.drying_station": "Drying Station",
+  "block.mikubrewery.espresso_station": "Espresso Machine",
 
-  "itemgroup.mikusbrewery.mikus_brewery_items": "Miku's Brewery Items"
+  "itemgroup.mikusbrewery.mikus_brewery_items": "Miku's Brewery Items",
+
+  "sounds.mikusbrewery.mill_station_run": "Milling Station"
 }

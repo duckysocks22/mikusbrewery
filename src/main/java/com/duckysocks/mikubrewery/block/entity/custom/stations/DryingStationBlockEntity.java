@@ -7,7 +7,6 @@ import com.duckysocks.mikubrewery.block.entity.custom.ImplementedInventory;
 import com.duckysocks.mikubrewery.recipe.ModRecipes;
 import com.duckysocks.mikubrewery.recipe.stations.drying_station.DryingStationRecipe;
 import com.duckysocks.mikubrewery.recipe.stations.drying_station.DryingStationRecipeInput;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.inventory.Inventories;
@@ -33,6 +32,8 @@ public class DryingStationBlockEntity extends BlockEntity implements Implemented
 
     private float rotation = 0;
     private ItemStack currentItem;
+
+    private String DEBUG;
 
     public DryingStationBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.DRYING_STATION_BE, pos, state);

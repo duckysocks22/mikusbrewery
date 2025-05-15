@@ -3,9 +3,9 @@ package com.duckysocks.mikubrewery.block.entity.custom.stations;
 import com.duckysocks.mikubrewery.block.entity.ModBlockEntities;
 import com.duckysocks.mikubrewery.block.entity.custom.ImplementedInventory;
 import com.duckysocks.mikubrewery.recipe.ModRecipes;
-import com.duckysocks.mikubrewery.recipe.stations.mill_station.MillStationRecipe;
-import com.duckysocks.mikubrewery.recipe.stations.mill_station.MillStationRecipeInput;
-import com.duckysocks.mikubrewery.screen.custom.station.millstation.MillStationScreenHandler;
+import com.duckysocks.mikubrewery.recipe.stations.espresso_station.EspressoStationRecipe;
+import com.duckysocks.mikubrewery.recipe.stations.espresso_station.EspressoStationRecipeInput;
+import com.duckysocks.mikubrewery.screen.custom.station.espressostation.EspressoStationScreenHandler;
 import com.duckysocks.mikubrewery.sound.ModSounds;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
@@ -33,7 +33,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class MillStationBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory<BlockPos>, ImplementedInventory {
+public class EspressoStationBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory<BlockPos>, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
     private float rotation = 0;
 
@@ -54,14 +54,14 @@ public class MillStationBlockEntity extends BlockEntity implements ExtendedScree
     private boolean soundPlaying = false;
     private final PositionedSoundInstance machineSound = PositionedSoundInstance.master(ModSounds.MILL_STATION_RUN, 1.0f);;
 
-    public MillStationBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.MILL_STATION_BE, pos, state);
+    public EspressoStationBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.EXPRESSO_STATION_BE, pos, state);
         this.propertyDelegate = new PropertyDelegate() {
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> MillStationBlockEntity.this.progress;
-                    case 1 -> MillStationBlockEntity.this.maxProgress;
+                    case 0 -> EspressoStationBlockEntity.this.progress;
+                    case 1 -> EspressoStationBlockEntity.this.maxProgress;
                     default -> 0;
                 };
             }
@@ -69,8 +69,8 @@ public class MillStationBlockEntity extends BlockEntity implements ExtendedScree
             @Override
             public void set(int index, int value) {
                 switch (index) {
-                    case 0: MillStationBlockEntity.this.progress = value;
-                    case 1: MillStationBlockEntity.this.maxProgress = value;
+                    case 0: EspressoStationBlockEntity.this.progress = value;
+                    case 1: EspressoStationBlockEntity.this.maxProgress = value;
                 }
             }
 
@@ -93,27 +93,27 @@ public class MillStationBlockEntity extends BlockEntity implements ExtendedScree
 
     @Override
     public Text getDisplayName() {
-        return Text.translatable("block.mikubrewery.mill_station");
+        return Text.translatable("block.mikubrewery.espresso_station");
     }
 
     @Override
     public @Nullable ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new MillStationScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
+        return new EspressoStationScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
     }
 
     @Override
     protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         super.writeNbt(nbt, registryLookup);
         Inventories.writeNbt(nbt, inventory, registryLookup);
-        nbt.putInt("millstation.progress", progress);
-        nbt.putInt("millstation.max_progress", maxProgress);
+        nbt.putInt("espresso_station.progress", progress);
+        nbt.putInt("espresso_station.max_progress", maxProgress);
     }
 
     @Override
     protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         Inventories.readNbt(nbt, inventory, registryLookup);
-        progress = nbt.getInt("millstation.progress");
-        maxProgress = nbt.getInt("millstation.max_progress");
+        progress = nbt.getInt("espresso_station.progress");
+        maxProgress = nbt.getInt("espresso_station.max_progress");
         super.readNbt(nbt, registryLookup);
     }
 
@@ -154,7 +154,7 @@ public class MillStationBlockEntity extends BlockEntity implements ExtendedScree
     }
 
     private void craftItem() {
-        Optional<RecipeEntry<MillStationRecipe>> recipe = getCurrentRecipe();
+        Optional<RecipeEntry<EspressoStationRecipe>> recipe = getCurrentRecipe();
 
         ItemStack output = recipe.get().value().output();
         this.removeStack(INPUT_SLOT, 1);
@@ -175,7 +175,7 @@ public class MillStationBlockEntity extends BlockEntity implements ExtendedScree
 
 
     private boolean hasRecipe() {
-        Optional<RecipeEntry<MillStationRecipe>> recipe = getCurrentRecipe();
+        Optional<RecipeEntry<EspressoStationRecipe>> recipe = getCurrentRecipe();
         if(recipe.isEmpty()) {
             return false;
         }
@@ -184,9 +184,9 @@ public class MillStationBlockEntity extends BlockEntity implements ExtendedScree
         return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
     }
 
-    private Optional<RecipeEntry<MillStationRecipe>> getCurrentRecipe() {
+    private Optional<RecipeEntry<EspressoStationRecipe>> getCurrentRecipe() {
         return this.getWorld().getRecipeManager()
-                .getFirstMatch(ModRecipes.MILLSTATION_TYPE, new MillStationRecipeInput(inventory.get(INPUT_SLOT)), this.getWorld());
+                .getFirstMatch(ModRecipes.ESPRESSO_STATION_TYPE, new EspressoStationRecipeInput(inventory.get(INPUT_SLOT)), this.getWorld());
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {

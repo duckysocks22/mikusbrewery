@@ -2,6 +2,7 @@ package com.duckysocks.mikubrewery.block;
 
 import com.duckysocks.mikubrewery.MikusBrewery;
 import com.duckysocks.mikubrewery.block.custom.stations.DryingStationBlock;
+import com.duckysocks.mikubrewery.block.custom.stations.EspressoStationBlock;
 import com.duckysocks.mikubrewery.block.custom.stations.MillStationBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
@@ -28,6 +29,9 @@ public class ModBlocks {
             new DryingStationBlock(AbstractBlock.Settings.create().strength(1f).nonOpaque()
                     .requiresTool().sounds(BlockSoundGroup.WOOD)));
 
+    public static final Block ESPRESSO_STATION = registerBlock("espresso_station",
+            new EspressoStationBlock(AbstractBlock.Settings.create().strength(2f).nonOpaque()
+                    .requiresTool().sounds(BlockSoundGroup.STONE)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
@@ -49,6 +53,7 @@ public class ModBlocks {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(fabricItemGroupEntries -> {
             fabricItemGroupEntries.add(ModBlocks.MILL_STATION);
             fabricItemGroupEntries.add(ModBlocks.DRYING_STATION);
+            fabricItemGroupEntries.add(ModBlocks.ESPRESSO_STATION);
         });
     }
 }
